@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_text">40sp</dimen>
+    <dimen name="digit_text">35sp</dimen>
+    <dimen name="ls_digit_text">25sp</dimen>
+    <dimen name="opField_wSize">350dp</dimen>
+    <dimen name="opField_hSize">50dp</dimen>
+    <dimen name="opField_LSwSize">650dp</dimen>
+    <dimen name="opField_LShSize">50dp</dimen>
+    <dimen name="expressionText">20sp</dimen>
+</resources>
