@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CalcButtonStyle">
+        <item name="android:textSize">@dimen/button_text</item>
+        <item name="android:layout_width">@dimen/ButtonWidth</item>
+        <item name="android:layout_height">@dimen/ButtonHeight</item>
+    </style>
+
+
+    <style name="CalcSpecialButtons">
+        <item name="android:textSize">@dimen/specialButtonsTextSize</item>
+        <item name="android:layout_width">@dimen/ButtonWidth</item>
+        <item name="android:layout_height">@dimen/ButtonHeight</item>
+    </style>
+
+    <style name="CalcSpecialButtonsLS">
+        <item name="android:textSize">@dimen/specialButtonsLSTextSize</item>
+        <item name="android:layout_width">@dimen/ButtonLWSize</item>
+        <item name="android:layout_height">@dimen/ButtonLHSize</item>
+    </style>
+
+</resources>

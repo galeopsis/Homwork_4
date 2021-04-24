@@ -21,13 +21,13 @@
             android:layout_height="@dimen/opField_LShSize"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/tvMarginTop"
+            android:ellipsize="start"
             android:fontFamily="@font/calc"
             android:gravity="end"
             android:hint="@string/hintTvOperation"
-            android:ellipsize="start"
             android:singleLine="true"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/ls_digit_text"/>
+            android:textSize="@dimen/ls_digit_text" />
 
         <EditText
             android:id="@+id/expressionEditText"
@@ -43,6 +43,7 @@
             android:textColor="@android:color/black"
             android:textSize="@dimen/expressionLandTextSize"
             tools:ignore="Autofill,LabelFor">
+
             <requestFocus />
         </EditText>
 
@@ -59,172 +60,171 @@
 
         <ImageButton
             android:id="@+id/btnShutdown"
-            android:layout_width="@dimen/imgButtonLWSize"
-            android:layout_height="@dimen/imgButtonLHSize"
+            android:layout_width="@dimen/ButtonLWSize"
+            android:layout_height="@dimen/ButtonLHSize"
             android:contentDescription="@string/ac"
             android:scaleType="fitXY"
             android:src="@drawable/btn_ac" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLeftBracket"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/op_color"
             android:text="@string/btnLeftBracket"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRightBracket"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/op_color"
             android:text="@string/btnRightBracket"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDivide"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/op_color"
             android:text="@string/btnDivide"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMultiply"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/op_color"
             android:text="@string/btnMultiply"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn7"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/numeric_color"
             android:text="@string/btn7"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn8"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/numeric_color"
             android:text="@string/btn8"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn9"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/numeric_color"
             android:text="@string/btn9"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAC"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/op_color"
             android:text="@string/ac"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBack"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/op_color"
             android:text="@string/btnBack"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDot"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/op_color"
             android:text="@string/btnDot"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPlus"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/op_color"
             android:text="@string/btnPlus"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMinus"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/op_color"
             android:text="@string/btnMinus"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn4"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/numeric_color"
             android:text="@string/btn4"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn5"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/numeric_color"
             android:text="@string/btn5"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn6"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/numeric_color"
             android:text="@string/btn6"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnResult"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/result_color"
             android:text="@string/btnResult"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSqrt"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/op_color"
             android:text="@string/sqrt"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSin"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/op_color"
             android:text="@string/sin"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCos"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/op_color"
             android:text="@string/cos"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn0"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/numeric_color"
             android:text="@string/btn0"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn1"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/numeric_color"
             android:text="@string/btn1"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn2"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/numeric_color"
             android:text="@string/btn2"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
+            android:textColor="@android:color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn3"
+            style="@style/CalcSpecialButtonsLS"
             android:backgroundTint="@color/numeric_color"
             android:text="@string/btn3"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
-
+            android:textColor="@android:color/white" />
     </GridLayout>
 </FrameLayout>
