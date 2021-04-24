@@ -90,7 +90,6 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-
     private fun trigger(effect: ViewEffect) {
         when (effect) {
             is ViewEffect.ShowToast -> {

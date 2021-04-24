@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/LinearLayoutHeight"
         android:background="@drawable/display"
         android:orientation="vertical"
         tools:context=".MainActivity">
@@ -32,16 +32,16 @@
         <EditText
             android:id="@+id/expressionEditText"
             android:layout_width="@dimen/opField_wSize"
-            android:layout_height="52dp"
+            android:layout_height="@dimen/editText_hSize"
             android:layout_gravity="center"
             android:background="@null"
-            android:digits="0123456789+-×÷(). "
+            android:digits="@string/digitsAllowed"
             android:fontFamily="sans-serif-light"
             android:gravity="center|end"
             android:inputType="textMultiLine"
             android:saveEnabled="false"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/expressionText"
+            android:textSize="@dimen/expressionTextSize"
             tools:ignore="Autofill,LabelFor">
             <requestFocus />
         </EditText>
@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="@dimen/GridLayoutMarginTop"
         android:columnCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,8 +63,8 @@
 
         <ImageButton
             android:id="@+id/btnShutdown"
-            android:layout_width="89dp"
-            android:layout_height="72dp"
+            android:layout_width="@dimen/ImageButtonWidth"
+            android:layout_height="@dimen/ImageButtonHeight"
             android:contentDescription="@string/ac"
             android:scaleType="fitXY"
             android:src="@drawable/btn_ac" />

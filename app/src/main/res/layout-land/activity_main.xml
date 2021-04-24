@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="@dimen/LinearLayoutLandScapeHeight"
         android:background="@drawable/display"
         android:orientation="vertical"
         android:scaleType="fitXY"
@@ -20,28 +20,28 @@
             android:layout_width="@dimen/opField_LSwSize"
             android:layout_height="@dimen/opField_LShSize"
             android:layout_gravity="center"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="@dimen/tvMarginTop"
             android:fontFamily="@font/calc"
             android:gravity="end"
             android:hint="@string/hintTvOperation"
             android:ellipsize="start"
             android:singleLine="true"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/expressionText" />
+            android:textSize="@dimen/ls_digit_text"/>
 
         <EditText
             android:id="@+id/expressionEditText"
-            android:layout_width="@dimen/opField_LSwSize"
-            android:layout_height="52dp"
+            android:layout_width="@dimen/editTExtField_LSwSize"
+            android:layout_height="@dimen/editTExtField_LShSize"
             android:layout_gravity="center"
             android:background="@null"
-            android:digits="0123456789+-×÷(). "
+            android:digits="@string/digitsAllowed"
             android:fontFamily="sans-serif-light"
             android:gravity="center|end"
             android:inputType="textMultiLine"
             android:saveEnabled="false"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/digit_text"
+            android:textSize="@dimen/expressionLandTextSize"
             tools:ignore="Autofill,LabelFor">
             <requestFocus />
         </EditText>
@@ -59,8 +59,8 @@
 
         <ImageButton
             android:id="@+id/btnShutdown"
-            android:layout_width="88dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/imgButtonLWSize"
+            android:layout_height="@dimen/imgButtonLHSize"
             android:contentDescription="@string/ac"
             android:scaleType="fitXY"
             android:src="@drawable/btn_ac" />
@@ -182,7 +182,7 @@
             android:backgroundTint="@color/op_color"
             android:text="@string/sqrt"
             android:textColor="@android:color/white"
-            android:textSize="25sp" />
+            android:textSize="@dimen/ls_digit_text" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSin"

@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="button_text">40sp</dimen>
-    <dimen name="digit_text">35sp</dimen>
-    <dimen name="ls_digit_text">25sp</dimen>
+    <dimen name="digit_text">30sp</dimen>
+    <dimen name="ls_digit_text">30sp</dimen>
     <dimen name="opField_wSize">350dp</dimen>
-    <dimen name="opField_hSize">50dp</dimen>
-    <dimen name="opField_LSwSize">650dp</dimen>
-    <dimen name="opField_LShSize">50dp</dimen>
-    <dimen name="expressionText">20sp</dimen>
+    <dimen name="opField_hSize">30dp</dimen>
+    <dimen name="opField_LSwSize">630dp</dimen>
+    <dimen name="editTExtField_LSwSize">630dp</dimen>
+    <dimen name="opField_LShSize">25dp</dimen>
+    <dimen name="expressionTextSize">25sp</dimen>
+    <dimen name="editText_hSize">65dp</dimen>
+    <dimen name="expressionLandTextSize">20sp</dimen>
+    <dimen name="imgButtonLWSize">88dp</dimen>
+    <dimen name="imgButtonLHSize">60dp</dimen>
+    <dimen name="tvMarginTop">30dp</dimen>
+    <dimen name="editTExtField_LShSize">52dp</dimen>
+    <dimen name="GridLayoutMarginTop">80dp</dimen>
+    <dimen name="ImageButtonWidth">89dp</dimen>
+    <dimen name="ImageButtonHeight">72dp</dimen>
+    <dimen name="LinearLayoutHeight">200dp</dimen>
+    <dimen name="LinearLayoutLandScapeHeight">150dp</dimen>
+    <dimen name="ColumnCount">4</dimen>
 </resources>
