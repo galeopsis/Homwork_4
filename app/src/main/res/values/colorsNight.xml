@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200N">#7B4BB5</color>
+    <color name="purple_500N">#5406C3</color>
+    <color name="purple_700N">#2A0285</color>
+    <color name="teal_200N">#04A898</color>
+    <color name="teal_700N">#016161</color>
+    <color name="blackN">#FF000000</color>
+    <color name="whiteN">#6C6A6A</color>
+    <color name="op_colorN">#02535A</color>
+    <color name="result_colorN">#036978</color>
+    <color name="ac_colorN">#012C25</color>
+    <color name="numeric_colorN">#090E40</color>
+</resources>
