@@ -7,8 +7,8 @@
     <color name="teal_700N">#016161</color>
     <color name="blackN">#FF000000</color>
     <color name="whiteN">#6C6A6A</color>
-    <color name="op_colorN">#02535A</color>
+    <color name="op_colorN">#353737</color>
     <color name="result_colorN">#036978</color>
     <color name="ac_colorN">#012C25</color>
-    <color name="numeric_colorN">#090E40</color>
+    <color name="numeric_colorN">#000000</color>
 </resources>
