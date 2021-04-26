@@ -30,6 +30,8 @@
             android:textSize="@dimen/digit_TextSizeL" />
 
         <EditText
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:id="@+id/expressionEditText"
             android:layout_width="@dimen/editTExtField_LSwSize"
             android:layout_height="@dimen/editTExtField_LShSize"
