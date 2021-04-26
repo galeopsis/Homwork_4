@@ -7,8 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="op_color">#00838F</color>
-    <color name="result_color">#00B8D4</color>
-    <color name="ac_color">#004D40</color>
-    <color name="numeric_color">#1A237E</color>
+    <color name="op_color">#5D9398</color>
+    <color name="result_color">#6DC1CD</color>
+    <color name="ac_color">#51AE9E</color>
+    <color name="numeric_color">#464C88</color>
 </resources>

@@ -29,6 +29,7 @@
     <string name="cos">cos</string>
     <string name="sqrt">√</string>
     <string name="hintTvOperation">0</string>
-    <string name="wrong_format">Wrong format</string>
+    <string name="wrong_format">Некорректный ввод!</string>
+    <string name="digitsAllowed">0123456789+-×÷().</string>
 
 </resources>
