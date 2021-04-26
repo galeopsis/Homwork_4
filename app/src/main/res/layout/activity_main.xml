@@ -30,14 +30,14 @@
             android:textSize="@dimen/digit_TextSize" />
 
         <EditText
-            android:focusable="false"
-            android:focusableInTouchMode="false"
             android:id="@+id/expressionEditText"
             android:layout_width="@dimen/opField_wSize"
             android:layout_height="@dimen/editText_hSize"
             android:layout_gravity="center"
             android:background="@null"
             android:digits="@string/digitsAllowed"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:fontFamily="sans-serif-light"
             android:gravity="center|end"
             android:inputType="textMultiLine"
