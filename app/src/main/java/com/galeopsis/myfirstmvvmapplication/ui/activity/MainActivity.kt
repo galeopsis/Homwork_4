@@ -1,5 +1,6 @@
 package com.galeopsis.myfirstmvvmapplication.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,7 +12,6 @@ import com.galeopsis.myfirstmvvmapplication.databinding.ActivityMainBinding
 import com.galeopsis.myfirstmvvmapplication.ui.ViewEffect
 import com.galeopsis.myfirstmvvmapplication.ui.ViewEvent
 import com.galeopsis.myfirstmvvmapplication.vm.MainViewModel
-import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -19,8 +19,19 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val bundle: Bundle? = intent.extras
+        when (bundle?.getString("theme")) {
+            "one" -> {
+                setTheme(R.style.Theme_MyFirstMVVMApplication)
+            }
+            "two" -> {
+                setTheme(R.style.Theme_MaterialComponents_Light)
+            }
+        }
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
+
         setContentView(binding.root)
 
         binding.expressionEditText.showSoftInputOnFocus = false
@@ -69,8 +80,13 @@ class MainActivity : AppCompatActivity() {
             btnSqrt.setOnClickListener { viewModel.event(ViewEvent.SqrtClick) }
             btnCos.setOnClickListener { viewModel.event(ViewEvent.CosClick) }
             btnSin.setOnClickListener { viewModel.event(ViewEvent.SinClick) }
-            btnShutdown.setOnClickListener { exitProcess(0) }
+            btnMenu.setOnClickListener { menuClick() }
         }
+    }
+
+    private fun menuClick() {
+        val intent = Intent(this, SetThemeActivity::class.java)
+        startActivity(intent)
     }
 
     private fun initObservers() {

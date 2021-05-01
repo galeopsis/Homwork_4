@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CalcStyle" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColor">@color/Yellow</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+    <style name="NumericButtons" parent="CalcStyle">
+        <item name="android:backgroundTint">@color/teal_700N</item>
+    </style>
+
+</resources>

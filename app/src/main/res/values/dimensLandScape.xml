@@ -2,9 +2,10 @@
 <resources>
     <dimen name="digit_TextSizeL">30sp</dimen>
     <dimen name="opField_wSizeL">630dp</dimen>
-    <dimen name="opField_hSizeL">25dp</dimen>
+    <dimen name="opField_hSizeL">27dp</dimen>
     <dimen name="expressionTextSizeL">20sp</dimen>
-    <dimen name="buttonWidthL">88dp</dimen>
+    <dimen name="buttonWidthL">80dp</dimen>
     <dimen name="buttonHeightL">60dp</dimen>
     <dimen name="specialButtonsTextSizeL">25sp</dimen>
+    <dimen name="editTExtField_LShSize">62dp</dimen>
 </resources>
