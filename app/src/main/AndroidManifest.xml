@@ -10,14 +10,25 @@
         android:supportsRtl="true"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".ui.activity.SetThemeActivity"
+            android:theme="@style/Theme.MyFirstMVVMApplication" />
+        <activity
             android:name=".ui.activity.MainActivity"
             android:theme="@style/Theme.MyFirstMVVMApplication">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:label="com.galeopsis.myfirstmvvmapplication.ui.activity.MainActivity">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Принимаем URI с началом "example://intent" -->
+                <data
+                    android:host="intent"
+                    android:scheme="example" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

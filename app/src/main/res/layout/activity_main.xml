@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3C5051"
-    android:backgroundTint="#3C5051">
+    android:background="@color/FrameLayoutBackgroundColor">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -15,18 +14,19 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
+
         <TextView
             android:id="@+id/tvOperation"
             android:layout_width="@dimen/opField_wSize"
             android:layout_height="@dimen/opField_hSize"
             android:layout_gravity="center"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="50dp"
             android:ellipsize="start"
             android:fontFamily="@font/calc"
             android:gravity="end"
             android:hint="@string/hintTvOperation"
             android:singleLine="true"
-            android:textColor="@android:color/black"
+            android:textColor="@color/black"
             android:textSize="@dimen/digit_TextSize" />
 
         <EditText
@@ -42,7 +42,7 @@
             android:gravity="center|end"
             android:inputType="textMultiLine"
             android:saveEnabled="false"
-            android:textColor="@android:color/black"
+            android:textColor="@color/black"
             android:textSize="@dimen/expressionTextSize"
             tools:ignore="Autofill,LabelFor">
 
@@ -63,132 +63,182 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:ignore="MissingConstraints">
 
-        <ImageButton
-            android:id="@+id/btnShutdown"
-            style="@style/OperationButton"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMenu"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:contentDescription="@string/ac"
-            android:scaleType="fitXY"
-            android:src="@drawable/btn_ac" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLeftBracket"
-            style="@style/OperationButton"
-            android:text="@string/btnLeftBracket" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRightBracket"
-            style="@style/OperationButton"
-            android:text="@string/btnRightBracket" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSqrt"
-            style="@style/OperationButton"
-            android:text="@string/sqrt" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnAC"
-            style="@style/OperationButton"
-            android:text="@string/ac" />
+            android:background="@drawable/settings"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSin"
-            style="@style/OperationButton"
-            android:text="@string/sin" />
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/sin"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCos"
-            style="@style/OperationButton"
-            android:text="@string/cos" />
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/cos"
+            android:textSize="@dimen/buttonTextSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSqrt"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/sqrt"
+            android:textSize="@dimen/buttonTextSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAC"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/ac"
+            android:textSize="@dimen/buttonTextSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLeftBracket"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btnLeftBracket"
+            android:textSize="@dimen/buttonTextSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRightBracket"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btnRightBracket"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDivide"
-            style="@style/OperationButton"
-            android:text="@string/btnDivide" />
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btnDivide"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn7"
-            style="@style/NumericButton"
-            android:text="@string/btn7" />
+            style="@style/NumericButtons"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btn7"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn8"
-            style="@style/NumericButton"
-            android:text="@string/btn8" />
+            style="@style/NumericButtons"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btn8"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn9"
-            style="@style/NumericButton"
-            android:text="@string/btn9" />
+            style="@style/NumericButtons"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btn9"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMultiply"
-            style="@style/OperationButton"
-            android:text="@string/btnMultiply" />
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btnMultiply"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn4"
-            style="@style/NumericButton"
-            android:text="@string/btn4" />
+            style="@style/NumericButtons"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btn4"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn5"
-            style="@style/NumericButton"
-            android:text="@string/btn5" />
+            style="@style/NumericButtons"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btn5"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn6"
-            style="@style/NumericButton"
-            android:text="@string/btn6" />
+            style="@style/NumericButtons"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btn6"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPlus"
-            style="@style/OperationButton"
-            android:text="@string/btnPlus" />
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btnPlus"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn1"
-            style="@style/NumericButton"
-            android:text="@string/btn1" />
+            style="@style/NumericButtons"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btn1"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn2"
-            style="@style/NumericButton"
-            android:text="@string/btn2" />
+            style="@style/NumericButtons"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btn2"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn3"
-            style="@style/NumericButton"
-            android:text="@string/btn3" />
+            style="@style/NumericButtons"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btn3"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMinus"
-            style="@style/OperationButton"
-            android:text="@string/btnMinus" />
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btnMinus"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnDot"
-            style="@style/OperationButton"
-            android:text="@string/btnDot" />
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:background="@drawable/backspace2"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn0"
-            style="@style/NumericButton"
-            android:text="@string/btn0" />
-
-        <ImageButton
-            android:id="@+id/btnBack"
-            style="@style/OperationButton"
+            style="@style/NumericButtons"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:contentDescription="@string/ac"
-            android:scaleType="center"
-            android:src="@drawable/backspace" />
+            android:text="@string/btn0"
+            android:textSize="@dimen/buttonTextSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDot"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btnDot"
+            android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnResult"
-            style="@style/OperationButton"
-            android:text="@string/btnResult" />
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/btnResult"
+            android:textSize="@dimen/buttonTextSize" />
     </GridLayout>
 </FrameLayout>
