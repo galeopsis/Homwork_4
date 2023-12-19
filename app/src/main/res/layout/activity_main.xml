@@ -10,19 +10,20 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/linearLayoutHeight"
-        android:background="@drawable/display"
+        android:background="@color/ac_color2"
         android:orientation="vertical"
         tools:context=".MainActivity">
 
 
         <TextView
             android:id="@+id/tvOperation"
-            android:layout_width="@dimen/opField_wSize"
-            android:layout_height="@dimen/opField_hSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:ellipsize="start"
-            android:fontFamily="@font/calc"
+            android:fontFamily="sans-serif-light"
+            android:textStyle="bold"
             android:gravity="end"
             android:hint="@string/hintTvOperation"
             android:singleLine="true"
@@ -31,14 +32,15 @@
 
         <EditText
             android:id="@+id/expressionEditText"
-            android:layout_width="@dimen/opField_wSize"
-            android:layout_height="@dimen/editText_hSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@null"
             android:digits="@string/digitsAllowed"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:fontFamily="sans-serif-light"
+            android:textStyle="bold"
             android:gravity="center|end"
             android:inputType="textMultiLine"
             android:saveEnabled="false"
@@ -52,10 +54,9 @@
 
     <GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/gridLayoutMarginTop"
+        android:layout_gravity="bottom"
         android:columnCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,10 +65,13 @@
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnMenu"
+            android:id="@+id/btnAC"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:background="@drawable/settings"
+            android:background="@color/Red"
+            android:text="@string/ac"
+            android:textColor="@color/Yellow"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -75,6 +79,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/sin"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -82,6 +87,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/cos"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -89,13 +95,15 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/sqrt"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnAC"
+            android:id="@+id/btnRaise"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:text="@string/ac"
+            android:text="@string/raise"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -103,6 +111,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btnLeftBracket"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -110,6 +119,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btnRightBracket"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -117,6 +127,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btnDivide"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -125,6 +136,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btn7"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -133,6 +145,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btn8"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -141,6 +154,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btn9"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -148,6 +162,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btnMultiply"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -156,6 +171,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btn4"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -164,6 +180,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btn5"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -172,6 +189,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btn6"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -179,6 +197,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btnPlus"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -187,6 +206,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btn1"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -195,6 +215,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btn2"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -203,6 +224,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btn3"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -210,14 +232,17 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btnMinus"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBack"
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
-            android:background="@drawable/backspace2"
-            android:textSize="@dimen/buttonTextSize" />
+            android:background="@color/settingsColor"
+            android:text="@string/del"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn0"
@@ -225,6 +250,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btn0"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -232,6 +258,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btnDot"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
 
         <com.google.android.material.button.MaterialButton
@@ -239,6 +266,7 @@
             android:layout_width="@dimen/buttonWidth"
             android:layout_height="@dimen/buttonHeight"
             android:text="@string/btnResult"
+            android:textStyle="bold"
             android:textSize="@dimen/buttonTextSize" />
     </GridLayout>
 </FrameLayout>

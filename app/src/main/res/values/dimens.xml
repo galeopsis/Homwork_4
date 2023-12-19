@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="buttonTextSize">20sp</dimen>
-    <dimen name="digit_TextSize">30sp</dimen>
+    <dimen name="buttonTextSize">40sp</dimen>
+    <dimen name="digit_TextSize">50sp</dimen>
     <dimen name="opField_wSize">350dp</dimen>
     <dimen name="opField_hSize">30dp</dimen>
     <dimen name="editTExtField_LSwSize">630dp</dimen>
-    <dimen name="expressionTextSize">25sp</dimen>
+    <dimen name="expressionTextSize">45sp</dimen>
     <dimen name="editText_hSize">65dp</dimen>
     <dimen name="tvMarginTop">15dp</dimen>
     <dimen name="gridLayoutMarginTop">80dp</dimen>
-    <dimen name="buttonWidth">80dp</dimen>
-    <dimen name="buttonHeight">65dp</dimen>
+    <dimen name="buttonWidth">103dp</dimen>
+    <dimen name="buttonHeight">88dp</dimen>
     <dimen name="linearLayoutHeight">200dp</dimen>
     <dimen name="linearLayoutLandScapeHeight">150dp</dimen>
     <dimen name="columnCount">4</dimen>

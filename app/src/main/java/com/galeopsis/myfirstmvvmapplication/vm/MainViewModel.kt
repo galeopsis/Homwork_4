@@ -39,6 +39,7 @@ class MainViewModel : ViewModel() {
             is ViewEvent.SqrtClick -> sqrtClick()
             is ViewEvent.SinClick -> sinClick()
             is ViewEvent.CosClick -> cosClick()
+            is ViewEvent.RaiseClick -> raiseClick()
         }
     }
 
@@ -92,6 +93,19 @@ class MainViewModel : ViewModel() {
         clearAllIfEqualEntered()
         number = ""
         expression.value = expression.value + "cos("
+    }
+
+    private fun raiseClick() {
+        clearAllIfEqualEntered()
+        val expressionValue = expression.value?.replace(" ", "")
+        if (expressionValue?.isNotEmpty() == true
+            && expressionValue.last() != '+' && expressionValue.last() != '-'
+            && expressionValue.last() != '×' && expressionValue.last() != '÷'
+            && expressionValue.last() != '(' && expressionValue.last() != '.'
+        ) {
+            number = ""
+            expression.value = expression.value + " ^ "
+        }
     }
 
     private fun enterLeftBracket() {

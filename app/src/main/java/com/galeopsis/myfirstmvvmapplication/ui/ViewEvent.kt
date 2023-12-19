@@ -14,5 +14,6 @@ sealed class ViewEvent {
     object EqualClick : ViewEvent()
     object SqrtClick : ViewEvent()
     object SinClick : ViewEvent()
+    object RaiseClick : ViewEvent()
     object CosClick : ViewEvent()
 }

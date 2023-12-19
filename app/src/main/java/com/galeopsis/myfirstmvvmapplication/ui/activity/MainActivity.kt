@@ -1,6 +1,8 @@
 package com.galeopsis.myfirstmvvmapplication.ui.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -18,12 +20,14 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainViewModel by viewModels()
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         val bundle: Bundle? = intent.extras
         when (bundle?.getString("theme")) {
             "one" -> {
                 setTheme(R.style.Theme_MyFirstMVVMApplication)
             }
+
             "two" -> {
                 setTheme(R.style.Theme_MaterialComponents_Light)
             }
@@ -33,6 +37,8 @@ class MainActivity : AppCompatActivity() {
 
 
         setContentView(binding.root)
+
+        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
 
         binding.expressionEditText.showSoftInputOnFocus = false
         binding.expressionEditText.addTextChangedListener(object : TextWatcher {
@@ -52,36 +58,41 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initListeners() {
-        with(binding) {
-            arrayOf(
-                btn0,
-                btn1,
-                btn2,
-                btn3,
-                btn4,
-                btn5,
-                btn6,
-                btn7,
-                btn8,
-                btn9
-            ).forEachIndexed { index, btn ->
-                btn.setOnClickListener { viewModel.event(ViewEvent.DigitClick(index.toString())) }
+        try {
+            binding.apply {
+                arrayOf(
+                    btn0,
+                    btn1,
+                    btn2,
+                    btn3,
+                    btn4,
+                    btn5,
+                    btn6,
+                    btn7,
+                    btn8,
+                    btn9
+                ).forEachIndexed { index, btn ->
+                    // Check that btn is not null
+                    btn.setOnClickListener { viewModel.event(ViewEvent.DigitClick(index.toString())) }
+                }
+                btnBack.setOnClickListener { viewModel.event(ViewEvent.EraseClick) }
+                btnAC.setOnClickListener { viewModel.event(ViewEvent.ACClick) }
+                btnResult.setOnClickListener { viewModel.event(ViewEvent.EqualClick) }
+                btnDot.setOnClickListener { viewModel.event(ViewEvent.CommaClick) }
+                btnLeftBracket.setOnClickListener { viewModel.event(ViewEvent.LeftBracketClick) }
+                btnRightBracket.setOnClickListener { viewModel.event(ViewEvent.RightBracketClick) }
+                btnDivide.setOnClickListener { viewModel.event(ViewEvent.DivideClick) }
+                btnMultiply.setOnClickListener { viewModel.event(ViewEvent.MultiplyClick) }
+                btnMinus.setOnClickListener { viewModel.event(ViewEvent.MinusClick) }
+                btnPlus.setOnClickListener { viewModel.event(ViewEvent.PlusClick) }
+                btnSqrt.setOnClickListener { viewModel.event(ViewEvent.SqrtClick) }
+                btnCos.setOnClickListener { viewModel.event(ViewEvent.CosClick) }
+                btnSin.setOnClickListener { viewModel.event(ViewEvent.SinClick) }
+                btnRaise.setOnClickListener { viewModel.event(ViewEvent.RaiseClick) }
             }
-            btnBack.setOnClickListener { viewModel.event(ViewEvent.EraseClick) }
-            btnAC.setOnClickListener { viewModel.event(ViewEvent.ACClick) }
-            btnResult.setOnClickListener { viewModel.event(ViewEvent.EqualClick) }
-            btnDot.setOnClickListener { viewModel.event(ViewEvent.CommaClick) }
-            btnLeftBracket.setOnClickListener { viewModel.event(ViewEvent.LeftBracketClick) }
-            btnRightBracket.setOnClickListener { viewModel.event(ViewEvent.RightBracketClick) }
-            btnDivide.setOnClickListener { viewModel.event(ViewEvent.DivideClick) }
-            btnMultiply.setOnClickListener { viewModel.event(ViewEvent.MultiplyClick) }
-            btnMinus.setOnClickListener { viewModel.event(ViewEvent.MinusClick) }
-            btnPlus.setOnClickListener { viewModel.event(ViewEvent.PlusClick) }
-            btnSqrt.setOnClickListener { viewModel.event(ViewEvent.SqrtClick) }
-            btnCos.setOnClickListener { viewModel.event(ViewEvent.CosClick) }
-            btnSin.setOnClickListener { viewModel.event(ViewEvent.SinClick) }
-            btnMenu.setOnClickListener { menuClick() }
+        } catch (e: Exception) {
         }
+
     }
 
     private fun menuClick() {
@@ -91,23 +102,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun initObservers() {
         viewModel.expression.observe(
-            this,
-            {
-                binding.expressionEditText.setText(it)
-            }
-        )
+            this
+        ) {
+            binding.expressionEditText.setText(it)
+        }
         viewModel.answer.observe(
-            this,
-            {
-                binding.tvOperation.text = it
-            }
-        )
+            this
+        ) {
+            binding.tvOperation.text = it
+        }
         viewModel.viewEffect.observe(
-            this,
-            {
-                trigger(it)
-            }
-        )
+            this
+        ) {
+            trigger(it)
+        }
     }
 
     private fun trigger(effect: ViewEffect) {
