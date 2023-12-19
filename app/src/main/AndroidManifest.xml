@@ -16,8 +16,8 @@
             android:theme="@style/Theme.MyFirstMVVMApplication" />
         <activity
             android:name=".ui.activity.MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.MyFirstMVVMApplication">
+            android:theme="@style/Theme.MyFirstMVVMApplication"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

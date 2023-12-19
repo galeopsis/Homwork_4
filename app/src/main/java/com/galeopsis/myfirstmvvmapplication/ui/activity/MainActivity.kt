@@ -1,6 +1,7 @@
 package com.galeopsis.myfirstmvvmapplication.ui.activity
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainViewModel by viewModels()
 
+    var ctx: Context? = null // Make it nullable
+
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         val bundle: Bundle? = intent.extras
@@ -37,6 +40,9 @@ class MainActivity : AppCompatActivity() {
 
 
         setContentView(binding.root)
+
+        ctx = this@MainActivity
+
 
         this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
 
@@ -59,6 +65,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initListeners() {
         try {
+            ctx = this@MainActivity
             binding.apply {
                 arrayOf(
                     btn0,
@@ -77,6 +84,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 btnBack.setOnClickListener { viewModel.event(ViewEvent.EraseClick) }
                 btnAC.setOnClickListener { viewModel.event(ViewEvent.ACClick) }
+                linearLayout.setOnClickListener { viewModel.evaluateClipboardExpression(ctx) }
                 btnResult.setOnClickListener { viewModel.event(ViewEvent.EqualClick) }
                 btnDot.setOnClickListener { viewModel.event(ViewEvent.CommaClick) }
                 btnLeftBracket.setOnClickListener { viewModel.event(ViewEvent.LeftBracketClick) }

@@ -1,10 +1,14 @@
 package com.galeopsis.myfirstmvvmapplication.vm
 
+import android.content.ClipboardManager
+import android.content.Context
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.galeopsis.myfirstmvvmapplication.ui.SingleLiveEvent
 import com.galeopsis.myfirstmvvmapplication.ui.ViewEffect
 import com.galeopsis.myfirstmvvmapplication.ui.ViewEvent
+import com.galeopsis.myfirstmvvmapplication.ui.activity.MainActivity
 import org.mariuszgromada.math.mxparser.Expression
 import java.math.BigDecimal
 import java.util.*
@@ -28,6 +32,7 @@ class MainViewModel : ViewModel() {
             is ViewEvent.DigitClick -> enterDigit(event.digit)
             is ViewEvent.CommaClick -> enterComma()
             is ViewEvent.ACClick -> enterAC()
+//            is ViewEvent.ACClickLong -> { evaluateClipboardExpression() }
             is ViewEvent.LeftBracketClick -> enterLeftBracket()
             is ViewEvent.RightBracketClick -> enterRightBracket()
             is ViewEvent.DivideClick -> enterDivide()
@@ -226,12 +231,33 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    private fun clearAllIfEqualEntered() {
-        if (isEqualEntered) {
-            isEqualEntered = false
-            number = ""
-            expression.value = ""
-            answer.value = ""
+    fun evaluateClipboardExpression(context: Context?) {
+        val clipboard = context?.getSystemService(Context.CLIPBOARD_SERVICE) as? ClipboardManager
+        val clipData = clipboard?.primaryClip
+
+        if (clipData != null && clipData.itemCount > 0) {
+            val clipboardText = clipData.getItemAt(0).text?.toString()?.replace(" ", "")
+            if (!clipboardText.isNullOrBlank()) {
+                try {
+                    val expression = Expression(clipboardText.replace('×', '*').replace('÷', '/'))
+                    val result = expression.calculate()
+                    answer.value = BigDecimal(String.format(Locale.US, "%.10f", result))
+                        .stripTrailingZeros()
+                        .toPlainString()
+                } catch (e: Exception) {
+                    viewEffect.value = ViewEffect.ShowToast
+                    Log.e("MainViewModel", "Error evaluating clipboard expression", e)
+                }
+            }
         }
+    }
+
+    private fun clearAllIfEqualEntered() {
+//        if (isEqualEntered) {
+//            isEqualEntered = false
+//            number = ""
+//            expression.value = ""
+//            answer.value = ""
+//        }
     }
 }
