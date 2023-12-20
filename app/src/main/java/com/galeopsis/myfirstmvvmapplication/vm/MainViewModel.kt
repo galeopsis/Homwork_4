@@ -21,6 +21,8 @@ class MainViewModel : ViewModel() {
 
     private var number = ""
     private var isEqualEntered = false
+    private var clipboardData = ""
+
 
     init {
         expression.value = ""
@@ -32,7 +34,6 @@ class MainViewModel : ViewModel() {
             is ViewEvent.DigitClick -> enterDigit(event.digit)
             is ViewEvent.CommaClick -> enterComma()
             is ViewEvent.ACClick -> enterAC()
-//            is ViewEvent.ACClickLong -> { evaluateClipboardExpression() }
             is ViewEvent.LeftBracketClick -> enterLeftBracket()
             is ViewEvent.RightBracketClick -> enterRightBracket()
             is ViewEvent.DivideClick -> enterDivide()
@@ -234,6 +235,7 @@ class MainViewModel : ViewModel() {
     fun evaluateClipboardExpression(context: Context?) {
         val clipboard = context?.getSystemService(Context.CLIPBOARD_SERVICE) as? ClipboardManager
         val clipData = clipboard?.primaryClip
+        expression.value = clipboardData
 
         if (clipData != null && clipData.itemCount > 0) {
             val clipboardText = clipData.getItemAt(0).text?.toString()?.replace(" ", "")
@@ -241,6 +243,7 @@ class MainViewModel : ViewModel() {
                 try {
                     val expression = Expression(clipboardText.replace('×', '*').replace('÷', '/'))
                     val result = expression.calculate()
+                    clipboardData = clipboardText
                     answer.value = BigDecimal(String.format(Locale.US, "%.10f", result))
                         .stripTrailingZeros()
                         .toPlainString()

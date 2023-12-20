@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainViewModel by viewModels()
 
-    var ctx: Context? = null // Make it nullable
+    private var ctx: Context? = null // Make it nullable
+    private var hasClipBoardData = false
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,7 +85,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 btnBack.setOnClickListener { viewModel.event(ViewEvent.EraseClick) }
                 btnAC.setOnClickListener { viewModel.event(ViewEvent.ACClick) }
-                linearLayout.setOnClickListener { viewModel.evaluateClipboardExpression(ctx) }
+                linearLayout.setOnClickListener {
+                    hasClipBoardData = true
+                    viewModel.evaluateClipboardExpression(ctx)
+                }
                 btnResult.setOnClickListener { viewModel.event(ViewEvent.EqualClick) }
                 btnDot.setOnClickListener { viewModel.event(ViewEvent.CommaClick) }
                 btnLeftBracket.setOnClickListener { viewModel.event(ViewEvent.LeftBracketClick) }
